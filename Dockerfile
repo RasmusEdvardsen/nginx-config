@@ -1,3 +1,7 @@
-FROM nginx
+FROM nginx:stable-alpine
 
-# COPY default /etc/nginx/sites-enabled/
+COPY default.conf /etc/nginx/conf.d
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
