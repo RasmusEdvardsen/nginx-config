@@ -1,6 +1,6 @@
 FROM nginx:stable-alpine
 
-COPY default.conf /etc/nginx/conf.d
+COPY kraeja.conf storage.kraeja.conf portfolio.kraeja.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 
