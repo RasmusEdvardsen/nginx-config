@@ -13,7 +13,18 @@ docker run --rm -p 443:443 -p 80:80 --name letsencrypt
 ```
 
 ## Certbot renew
-TODO
+TODO:
+
+https://finnian.io/blog/ssl-with-docker-swarm-lets-encrypt-and-nginx/
+
+```
+docker run --rm --name letsencrypt \  
+    -v "/etc/letsencrypt:/etc/letsencrypt" \
+    -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
+    -v "/usr/share/nginx/html:/usr/share/nginx/html" \
+    certbot/certbot:latest \
+    renew --quiet
+```
 
 ## Create service
 To create the nginx service, run the following:
