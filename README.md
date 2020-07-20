@@ -11,6 +11,9 @@ docker run --rm -p 443:443 -p 80:80 --name letsencrypt
 	-d kraeja.com -d www.kraeja.com -d portfolio.kraeja.com -d storage.kraeja.com
 	--standalone --agree-tos
 ```
+### nginx & new certbot certs
+When generating new certificates, we have to down nginx, while this is happening.
+This is not required for renewing certs, tho.
 
 ## Certbot renew
 TODO:
