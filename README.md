@@ -32,7 +32,7 @@ docker run --rm --name letsencrypt \
 ## Create service
 To create the nginx service, run the following:
 ```
-docker service create -d --name <name-of-image> --mode global --network host --mount "type=bind,source=/etc/letsencrypt,destination=/etc/letsencrypt" <name-of-image>
+docker service create -d --name <name-of-image> --mode global --network host --mount "type=bind,source=/etc/letsencrypt,destination=/etc/letsencrypt" --mount "type=bind,source=/var/www/letsencrypt,destination=/var/www/letsencrypt" <name-of-image>
 ```
 * -d runs in detached mode - we can `docker service logs <name-of-service>` to see detailed logs
 * --mode global tells docker swarm to start one task, and only one, on each and every host machine
